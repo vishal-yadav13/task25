@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlowApp - SaaS Landing Page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    keyframes: {
+
+                        float: {
+                            '0%,100%': {
+                                transform: 'translateY(0px)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-20px)'
+                            }
+                        },
+
+                        morph: {
+                            '0%,100%': {
+                                borderRadius: '40% 60% 55% 45%'
+                            },
+                            '50%': {
+                                borderRadius: '60% 40% 45% 55%'
+                            }
+                        },
+
+                        rotateSlow: {
+                            from: {
+                                transform: 'rotate(0deg)'
+                            },
+                            to: {
+                                transform: 'rotate(360deg)'
+                            }
+                        },
+
+                        glow: {
+                            from: {
+                                boxShadow: '0 0 10px #38bdf8'
+                            },
+                            to: {
+                                boxShadow: '0 0 30px #38bdf8'
+                            }
+                        },
+
+                        slideUp: {
+                            from: {
+                                opacity: '0',
+                                transform: 'translateY(50px)'
+                            },
+                            to: {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        },
+
+                        slideIn: {
+                            from: {
+                                opacity: '0',
+                                transform: 'translateX(-60px)'
+                            },
+                            to: {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            }
+                        },
+
+                        scaleIn: {
+                            from: {
+                                opacity: '0',
+                                transform: 'scale(.8)'
+                            },
+                            to: {
+                                opacity: '1',
+                                transform: 'scale(1)'
+                            }
+                        }
+
+                    },
+
+                    animation: {
+
+                        float: 'float 6s ease-in-out infinite',
+                        morph: 'morph 8s ease-in-out infinite',
+                        rotateSlow: 'rotateSlow 20s linear infinite',
+                        glow: 'glow 2s ease-in-out infinite alternate',
+                        slideUp: 'slideUp 1s ease',
+                        slideIn: 'slideIn 1s ease',
+                        scaleIn: 'scaleIn .8s ease'
+
+                    }
+
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+
+    <header class="fixed top-0 left-0 w-full z-50">
+
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+
+            <h1 class="text-3xl font-bold text-cyan-400">
+                FlowApp
+            </h1>
+
+            <ul class="hidden md:flex gap-8 text-gray-300">
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Features</a></li>
+
+                <li><a href="#">Pricing</a></li>
+
+                <li><a href="#">Reviews</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+            <button class="bg-cyan-500 px-5 py-2 rounded-full hover:bg-cyan-600 transition">
+                Get Started
+            </button>
+
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+
+        <!-- Grid Background -->
+
+        <div class="absolute inset-0 opacity-10"
+            style="background-image:linear-gradient(#ffffff22 1px,transparent 1px),linear-gradient(90deg,#ffffff22 1px,transparent 1px);background-size:60px 60px;">
+        </div>
+
+        <!-- Floating Orb -->
+
+        <div class="absolute w-72 h-72 bg-cyan-500 rounded-full blur-3xl opacity-20 top-20 left-20 animate-float">
+        </div>
+
+        <div class="absolute w-60 h-60 bg-pink-500 rounded-full blur-3xl opacity-20 bottom-20 right-20 animate-float">
+        </div>
+
+        <!-- Morphing Shape -->
+
+        <div class="absolute w-96 h-96 bg-purple-500 opacity-20 blur-3xl animate-morph"></div>
+
+        <!-- Rotating Ring -->
+
+        <div class="absolute w-[500px] h-[500px] border border-cyan-400/20 rounded-full animate-rotateSlow">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative">
+
+            <!-- Left Content -->
+                         <div class="animate-slideIn">
+
+                <span class="bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm">
+                    AI Powered Productivity
+                </span>
+
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mt-6">
+
+                    Build Faster
+                    <br>
+
+                    <span class="text-cyan-400">
+                        With FlowApp
+                    </span>
+
+                </h1>
+
+                <p class="text-gray-400 mt-6 text-lg leading-8">
+
+                    FlowApp helps teams manage projects,
+                    automate daily work, track progress
+                    and collaborate from one modern dashboard.
+
+                </p>
+
+                <div class="flex flex-wrap gap-5 mt-10">
+
+                    <button class="bg-cyan-500 px-8 py-3 rounded-full hover:scale-105 transition animate-glow">
+
+                        Start Free
+
+                    </button>
+
+                    <button class="border border-cyan-400 px-8 py-3 rounded-full hover:bg-cyan-500 hover:border-cyan-500 transition">
+
+                        Live Demo
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Dashboard Preview -->
+
+            <div class="animate-scaleIn">
+
+                <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-500">
+
+                    <div class="flex justify-between items-center mb-6">
+
+                        <div>
+
+                            <h3 class="text-xl font-bold">
+
+                                Dashboard
+
+                            </h3>
+
+                            <p class="text-gray-400 text-sm">
+
+                                Team Overview
+
+                            </p>
+
+                        </div>
+
+                        <span class="bg-green-500 text-sm px-3 py-1 rounded-full">
+
+                            Online
+
+                        </span>
+
+                    </div>
+
+                    <div class="space-y-4">
+
+                        <div class="bg-slate-800 rounded-xl p-4">
+
+                            <p class="text-gray-400 text-sm">
+
+                                Active Users
+
+                            </p>
+
+                            <h2 class="text-3xl font-bold">
+
+                                12,540
+
+                            </h2>
+
+                        </div>
+
+                        <div class="bg-slate-800 rounded-xl p-4">
+
+                            <p class="text-gray-400 text-sm">
+
+                                Revenue
+
+                            </p>
+
+                            <h2 class="text-3xl font-bold">
+
+                                $48K
+
+                            </h2>
+
+                        </div>
+
+                        <div class="bg-slate-800 rounded-xl p-4">
+
+                            <p class="text-gray-400 text-sm">
+
+                                Tasks Completed
+
+                            </p>
+
+                            <h2 class="text-3xl font-bold">
+
+                                2,380
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+                <!-- Scroll Indicator -->
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+
+            <div class="w-7 h-12 border-2 border-cyan-400 rounded-full flex justify-center">
+
+                <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features Section -->
+
+    <section class="py-24 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-16 animate-slideUp">
+
+                <h2 class="text-5xl font-bold">
+
+                    Powerful Features
+
+                </h2>
+
+                <p class="text-gray-400 mt-5 max-w-2xl mx-auto">
+
+                    Everything you need to manage your team, automate work,
+                    and grow your business from one simple dashboard.
+
+                </p>
+
+            </div>
+
+            <!-- Bento Grid -->
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+
+                <div class="md:col-span-2 backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+                    <div class="text-5xl mb-5">
+
+                        🤖
+
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+
+                        AI Automation
+
+                    </h3>
+
+                    <p class="text-gray-300">
+
+                        Automate repetitive work using smart AI workflows
+                        that save time and increase productivity.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 hover:scale-105 transition">
+
+                    <div class="text-5xl mb-5">
+
+                        ⚡
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4">
+
+                        Super Fast
+
+                    </h3>
+
+                    <p class="text-gray-300">
+
+                        Lightning-fast performance for teams of every size.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 hover:scale-105 transition">
+
+                    <div class="text-5xl mb-5">
+
+                        🔒
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4">
+
+                        Secure Data
+
+                    </h3>
+
+                    <p class="text-gray-300">
+
+                        Enterprise-grade security with encrypted cloud storage.
+
+                    </p>
+
+                </div>
+                                <!-- Card 4 -->
+
+                <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+                    <div class="text-5xl mb-5">
+                        📊
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Analytics
+                    </h3>
+
+                    <p class="text-gray-300">
+
+                        Track your business performance with easy-to-read
+                        charts, reports and real-time insights.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 5 -->
+
+                <div class="md:col-span-2 backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+                    <div class="text-5xl mb-5">
+                        🔄
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Smart Sync
+                    </h3>
+
+                    <p class="text-gray-300">
+
+                        Sync files, tasks and team updates across all your
+                        devices without any manual work.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 6 -->
+
+                <div class="md:col-span-3 backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 hover:scale-105 hover:-translate-y-2 transition duration-300">
+
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+                        <div>
+
+                            <div class="text-5xl mb-5">
+                                👥
+                            </div>
+
+                            <h3 class="text-2xl font-bold mb-4">
+                                Team Collaboration
+                            </h3>
+
+                            <p class="text-gray-300 max-w-2xl">
+
+                                Share projects, assign tasks, chat with teammates,
+                                schedule meetings and keep everyone connected
+                                from one powerful workspace.
+
+                            </p>
+
+                        </div>
+
+                        <button class="bg-cyan-500 px-6 py-3 rounded-full hover:bg-cyan-600 transition">
+
+                            Explore More
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- Testimonials -->
+
+    <section class="py-24 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-16 animate-slideUp">
+
+                <h2 class="text-5xl font-bold">
+
+                    What Our Users Say
+
+                </h2>
+
+                <p class="text-gray-400 mt-5 max-w-2xl mx-auto">
+
+                    Thousands of teams trust FlowApp to manage projects,
+                    improve productivity and collaborate more efficiently.
+
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Testimonial 1 -->
+
+                <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 hover:-translate-y-2 hover:scale-105 transition duration-300">
+
+                    <div class="text-yellow-400 text-xl mb-4">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p class="text-gray-300 leading-7">
+
+                        "FlowApp made our daily work much easier. Our team
+                        finishes projects faster than ever."
+
+                    </p>
+
+                    <div class="flex items-center mt-6">
+
+                        <img
+                            src="https://i.pravatar.cc/80?img=12"
+                            class="w-14 h-14 rounded-full"
+                            alt="User">
+
+                        <div class="ml-4">
+
+                            <h4 class="font-semibold">
+
+                                Rahul Sharma
+
+                            </h4>
+
+                            <p class="text-sm text-gray-400">
+
+                                Product Manager
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Testimonial 2 -->
+
+                <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 hover:-translate-y-2 hover:scale-105 transition duration-300">
+
+                    <div class="text-yellow-400 text-xl mb-4">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p class="text-gray-300 leading-7">
+
+                        "The automation features saved us hours every week.
+                        The interface is simple and modern."
+
+                    </p>
+
+                    <div class="flex items-center mt-6">
+
+                        <img
+                            src="https://i.pravatar.cc/80?img=32"
+                            class="w-14 h-14 rounded-full"
+                            alt="User">
+
+                        <div class="ml-4">
+
+                            <h4 class="font-semibold">
+
+                                Sneha Verma
+
+                            </h4>
+
+                            <p class="text-sm text-gray-400">
+
+                                Marketing Lead
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Testimonial 3 -->
+
+                <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 hover:-translate-y-2 hover:scale-105 transition duration-300">
+
+                    <div class="text-yellow-400 text-xl mb-4">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p class="text-gray-300 leading-7">
+
+                        "Everything from analytics to collaboration works
+                        perfectly. Highly recommended for growing teams."
+
+                    </p>
+
+                    <div class="flex items-center mt-6">
+
+                        <img
+                            src="https://i.pravatar.cc/80?img=48"
+                            class="w-14 h-14 rounded-full"
+                            alt="User">
+
+                        <div class="ml-4">
+
+                            <h4 class="font-semibold">
+
+                                Aman Gupta
+
+                            </h4>
+
+                            <p class="text-sm text-gray-400">
+
+                                Startup Founder
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- CTA Section -->
+
+    <section class="relative py-24 px-6 overflow-hidden">
+
+        <!-- Gradient Background -->
+
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-700 opacity-90"></div>
+
+        <!-- Floating Orbs -->
+
+        <div class="absolute w-64 h-64 bg-cyan-300 rounded-full blur-3xl opacity-20 top-10 left-10 animate-float"></div>
+
+        <div class="absolute w-72 h-72 bg-pink-400 rounded-full blur-3xl opacity-20 bottom-10 right-10 animate-float"></div>
+
+        <div class="relative max-w-5xl mx-auto">
+
+            <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-12 text-center">
+
+                <h2 class="text-4xl md:text-5xl font-bold">
+
+                    Ready to Grow with FlowApp?
+
+                </h2>
+
+                <p class="mt-6 text-lg text-gray-200 max-w-2xl mx-auto">
+
+                    Join thousands of businesses using FlowApp to improve
+                    productivity, automate tasks and work together from
+                    anywhere.
+
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-5 mt-10">
+
+                    <button class="bg-white text-slate-900 font-semibold px-8 py-3 rounded-full hover:scale-105 transition">
+
+                        Get Started
+
+                    </button>
+
+                    <button class="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-slate-900 transition">
+
+                        Contact Sales
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-10">
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+
+            <div>
+
+                <h2 class="text-2xl font-bold text-cyan-400">
+
+                    FlowApp
+
+                </h2>
+
+                <p class="text-gray-400 mt-2">
+
+                    Smart SaaS platform for modern teams.
+
+                </p>
+
+            </div>
+
+            <div class="flex gap-6 text-gray-300">
+
+                <a href="#" class="hover:text-cyan-400 transition">Home</a>
+
+                <a href="#" class="hover:text-cyan-400 transition">Features</a>
+
+                <a href="#" class="hover:text-cyan-400 transition">Pricing</a>
+
+                <a href="#" class="hover:text-cyan-400 transition">Contact</a>
+
+            </div>
+
+            <div class="text-gray-500 text-sm">
+
+                © 2026 FlowApp. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
